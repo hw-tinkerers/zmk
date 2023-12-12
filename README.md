@@ -14,7 +14,7 @@ To review features, check out the [feature overview](https://zmk.dev/docs/). ZMK
 
 Steps to setup toolchain:
 
-1. Install west
+##1. Install west
 
 For macos and windows users:
 
@@ -28,7 +28,7 @@ For Linux users:
 pip3 install --user -U west
 ```
 
-2. Verify West is installed (For Linux and Windows users):
+##2. Verify West is installed (For Linux and Windows users):
 
 ```
 west --version
@@ -52,13 +52,13 @@ $Path = [Environment]::GetEnvironmentVariable('PATH', 'User')
 $env:PATH += ";$Scripts"
 ```
 
-3. Get source code:
+##3. Get source code:
 
 ```
 git clone git@github.com:hw-tinkerers/zmk.git
 ```
 
-4. setup the workspace
+##4. setup the workspace
 
 ```
 cd zmk
@@ -88,17 +88,21 @@ For linux users:
 pip3 install --user -r zephyr/scripts/requirements.txt
 ```
 
-5. Build your code after customixing your keymap or default:
-   To know more about customizing keymaps visit [this](https://github.com/hw-tinkerers/tr60-zmk-config) link
-   You have successfully setup your worksapce.
-   To build your code to flash to TR60 keyboard, run this command.
+##5. Build your code after customixing your keymap or default:<br>
+To know more about customizing keymaps visit [this](https://github.com/hw-tinkerers/tr60-zmk-config) link. <br>
+You have successfully setup your worksapce.
+To build your code to flash to TR60 keyboard, run this command.
 
 ```
 west build -p auto -b tr60 app/
 ```
 
-6. Copy your uf2 file to desktop to flash to your keyboard
+##6. Copy your uf2 file to desktop to flash to your keyboard
 
 ```
 cp build/zephyr/zmk.uf2 ~/Desktop
 ```
+
+Or you can just copy paste the firmware file. Just find zmk.uf2 file under zephyr folder inside build folder.<br>
+
+##7. Flash your custom firmware and enjoy!!
