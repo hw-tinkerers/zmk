@@ -88,9 +88,17 @@ For linux users:
 pip3 install --user -r zephyr/scripts/requirements.txt
 ```
 
-You have successfully setup your worksapce.
-To build your code to flash to TR60 keyboard, run this command.
+5. Build your code after customixing your keymap or default:
+   To know more about customizing keymaps visit [this](https://github.com/hw-tinkerers/tr60-zmk-config) link
+   You have successfully setup your worksapce.
+   To build your code to flash to TR60 keyboard, run this command.
 
 ```
 west build -p auto -b tr60 app/
+```
+
+6. Copy your uf2 file to desktop to flash to your keyboard
+
+```
+cp build/zephyr/zmk.uf2 ~/Desktop
 ```
