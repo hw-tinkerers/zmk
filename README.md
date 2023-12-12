@@ -16,7 +16,7 @@ Steps to setup toolchain:
 
 1. Install west
 
-For macos users:
+For macos and windows users:
 
 ```
 pip3 install -U west
