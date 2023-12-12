@@ -11,3 +11,86 @@ Check out the website to learn more: https://zmk.dev/.
 You can also come join our [ZMK Discord Server](https://zmk.dev/community/discord/invite).
 
 To review features, check out the [feature overview](https://zmk.dev/docs/). ZMK is under active development, and new features are listed with the [enhancement label](https://github.com/zmkfirmware/zmk/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) in GitHub. Please feel free to add 👍 to the issue description of any requests to upvote the feature.
+
+Steps to setup toolchain:
+
+1. Install west
+
+For macos users:
+
+```
+pip3 install -U west
+```
+
+For Linux users:
+
+```
+pip3 install --user -U west
+```
+
+2. Verify West is installed (For Linux and Windows users):
+
+```
+west --version
+```
+
+This should print a message like "West version: v0.14.0". If it prints an error instead, make sure ~/.local/bin is on your PATH environment variable.
+
+You can add it with these commands (For linux users):
+
+```
+echo 'export PATH=~/.local/bin:"$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+You can add it with these commands (For Windows users):
+
+```
+$Scripts = python -c "import sysconfig; print(sysconfig.get_path('scripts'))"
+$Path = [Environment]::GetEnvironmentVariable('PATH', 'User')
+[Environment]::SetEnvironmentVariable('PATH', "$Path;$Scripts", 'User')
+$env:PATH += ";$Scripts"
+```
+
+3. Get source code:
+
+```
+git clone git@github.com:hw-tinkerers/zmk.git
+```
+
+4. setup the workspace
+
+```
+cd zmk
+```
+
+```
+west init -l app/
+```
+
+```
+west update
+```
+
+```
+west zephyr-export
+```
+
+For mac and windows users:
+
+```
+pip3 install -r zephyr/scripts/requirements.txt
+```
+
+For linux users:
+
+```
+pip3 install --user -r zephyr/scripts/requirements.txt
+```
+
+You have successfully setup your worksapce.
+To build your code to flash to TR60 keyboard, run this command.
+
+```
+west build -p auto -b tr60 app/
+```
