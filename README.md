@@ -10,13 +10,17 @@ Check out the website to learn more: https://zmk.dev/.
 
 You can also come join our [ZMK Discord Server](https://zmk.dev/community/discord/invite).
 
-To review features, check out the [feature overview](https://zmk.dev/docs/). ZMK is under active development, and new features are listed with the [enhancement label](https://github.com/zmkfirmware/zmk/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) in GitHub. Please feel free to add 👍 to the issue description of any requests to upvote the feature.
+To review features, check out the [feature overview](https://zmk.dev/docs/). ZMK is under active development, and new features are listed with the [enhancement label](https://github.com/zmkfirmware/zmk/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) in GitHub. Please feel free to add 👍 to the issue description of any requests to upvote the feature. <br>
 
 Steps to setup toolchain:
 
+Before moving forward. If you have a Windows machine, please visit [this](https://www.youtube.com/watch?v=9gc0QM4smeY) link to install dependencies and zephyr-sdk to build firmware (As it is a bit complex to use comman line to setup toolchain on windows). <br>
+
+For Macos and Linux users:<br>
+
 1. Install west
 
-For macos and windows users:
+For macos:
 
 ```
 pip3 install -U west
@@ -28,7 +32,7 @@ For Linux users:
 pip3 install --user -U west
 ```
 
-2. Verify West is installed (For Linux and Windows users):
+2. Verify West is installed (For Linux users):
 
 ```
 west --version
@@ -43,22 +47,16 @@ echo 'export PATH=~/.local/bin:"$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-You can add it with these commands (For Windows users):
+3. Install Zephyr-sdk:<br>
+   [Install Zephyr SDK](https://docs.zephyrproject.org/3.2.0/develop/getting_started/index.html#install-zephyr-sdk) <br>
 
-```
-$Scripts = python -c "import sysconfig; print(sysconfig.get_path('scripts'))"
-$Path = [Environment]::GetEnvironmentVariable('PATH', 'User')
-[Environment]::SetEnvironmentVariable('PATH', "$Path;$Scripts", 'User')
-$env:PATH += ";$Scripts"
-```
-
-3. Get source code:
+4. Get source code:
 
 ```
 git clone git@github.com:hw-tinkerers/zmk.git
 ```
 
-4. setup the workspace
+5. setup the workspace
 
 ```
 cd zmk
@@ -88,7 +86,7 @@ For linux users:
 pip3 install --user -r zephyr/scripts/requirements.txt
 ```
 
-5. Build your code after customixing your keymap or default:<br>
+6. Build your code after customixing your keymap or default:<br>
    To know more about customizing keymaps visit [this](https://github.com/hw-tinkerers/tr60-zmk-config) link. <br>
    You have successfully setup your worksapce.
    To build your code to flash to TR60 keyboard, run this command.
@@ -97,7 +95,7 @@ pip3 install --user -r zephyr/scripts/requirements.txt
 west build -p auto -b tr60 app/
 ```
 
-6. Copy your uf2 file to desktop to flash to your keyboard
+7. Copy your uf2 file to desktop to flash to your keyboard
 
 ```
 cp build/zephyr/zmk.uf2 ~/Desktop
