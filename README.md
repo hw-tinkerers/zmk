@@ -18,6 +18,8 @@ Before moving forward. If you have a Windows machine, please visit [this](https:
 
 For Macos and Linux users:<br>
 
+Before moving forward, [Install dependencies](https://docs.zephyrproject.org/3.2.0/develop/getting_started/index.html#install-dependencies)
+
 1. Install west
 
 For macos:
