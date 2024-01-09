@@ -14,15 +14,15 @@ To review features, check out the [feature overview](https://zmk.dev/docs/). ZMK
 
 Steps to setup toolchain:
 
-Before moving forward. If you have a Windows machine, please visit [this](https://www.youtube.com/watch?v=9gc0QM4smeY) link to install dependencies and zephyr-sdk to build firmware (As it is a bit complex to use comman line to setup toolchain on windows). <br>
+Before moving forward. If you have a Windows machine, please visit [this](https://www.youtube.com/watch?v=9gc0QM4smeY) link to install dependencies and zephyr-sdk to build firmware (As it is a bit complex to use the command line to setup toolchain on windows). <br>
 
-For Macos and Linux users:<br>
+For macOS and Linux users:<br>
 
 Before moving forward, [Install dependencies](https://docs.zephyrproject.org/3.2.0/develop/getting_started/index.html#install-dependencies)
 
 1. Install west
 
-For macos:
+For macOS:
 
 ```
 pip3 install -U west
@@ -42,7 +42,7 @@ west --version
 
 This should print a message like "West version: v0.14.0". If it prints an error instead, make sure ~/.local/bin is on your PATH environment variable.
 
-You can add it with these commands (For linux users):
+You can add it with these commands (For Linux users):
 
 ```
 echo 'export PATH=~/.local/bin:"$PATH"' >> ~/.bashrc
@@ -88,21 +88,21 @@ For linux users:
 pip3 install --user -r zephyr/scripts/requirements.txt
 ```
 
-6. Build your code after customixing your keymap or default:<br>
+6. Build your code after customizing your keymap or default:<br>
    To know more about customizing keymaps visit [this](https://github.com/hw-tinkerers/tr60-zmk-config) link. <br>
-   You have successfully setup your worksapce.
-   To build your code to flash to TR60 keyboard, run this command.
+   You have successfully set up your workspace.
+   To build your code to flash to the TR60 keyboard, run this command.
 
 ```
 west build -p auto -b tr60 app/
 ```
 
-7. Copy your uf2 file to desktop to flash to your keyboard
+7. Copy your uf2 file to the desktop to flash to your keyboard
 
 ```
 cp build/zephyr/zmk.uf2 ~/Desktop
 ```
 
-Or you can just copy paste the firmware file. Just find zmk.uf2 file under zephyr folder inside build folder.<br>
+Or you can just copy and paste the firmware file. Just find zmk.uf2 file under the zephyr folder inside the build folder.<br>
 
 7. Flash your custom firmware and enjoy!!
